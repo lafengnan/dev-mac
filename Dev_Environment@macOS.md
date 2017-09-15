@@ -217,6 +217,32 @@ $ brew cask install gitup
 $ brew cask install gitfinder
 ```
 
+
+
+## Dependency Mgt
+
+### Gradle
+
+1. install
+
+   ```shell
+   $ brew install gradle
+   ```
+
+2. configuration
+
+   ​
+
+### Maven
+
+1. install
+
+   ```shell
+   $ brew install maven
+   ```
+
+   ​
+
 ## Java
 
 1. Install
