@@ -205,6 +205,14 @@ macOS has builtin git, we can upgrade it with brew install
 $ brew install git
 ```
 
+### tig
+
+*tig* is a text-mode interface for git https://github.com/jonas/tig
+
+```shell
+$ brew install tig
+```
+
 ### gitup
 
 ```shell
@@ -219,21 +227,29 @@ $ brew cask install gitfinder
 
 
 
-## Dependency Mgt
+## Java
 
-### Gradle
+1. Install
 
-1. install
+```shell
+$ brew cask install java
+```
 
-   ```shell
-   $ brew install gradle
-   ```
+2. Check Info 
 
-2. configuration
+```shell
+$ brew cask info java
+```
 
-   ​
+###Dependency Mgt
 
-### Maven
+#### Gradle
+
+```shell
+$ brew install gradle
+```
+
+#### Maven
 
 1. install
 
@@ -241,23 +257,7 @@ $ brew cask install gitfinder
    $ brew install maven
    ```
 
-   ​
-
-## Java
-
-1. Install
-
-```shell
-brew cask install java
-```
-
-2. Info 
-
-```shell
-brew cask info java
-```
-
-
+## 
 
 ## Python
 
@@ -277,9 +277,41 @@ https://pip.readthedocs.io/en/stable/installing/
 $ pip install virtualenv
 ```
 
+## Go
 
+1. install
 
-## Web Container
+   ```shell
+   $ brew install golang
+   ```
+
+2. Go versions management 
+
+   https://github.com/moovweb/gvm
+
+   ```shell
+   $ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+   ```
+
+   zsh will replace bash if you're using zshell.
+
+3. Dependencies managment
+
+   - [godep](https://github.com/tools/godep)
+
+     ```shell
+     $ go get github.com/tools/godep
+     ```
+
+   - [glide](https://glide.sh)
+
+     ```shell
+     $ brew install glide
+     ```
+
+   - Others
+
+## APP Sever
 
 ### Tomcat
 
@@ -320,42 +352,48 @@ $ catalina run
 1. MySQL server
 
    ```shell
-   brew install mysql
+   $ brew install mysql
    ```
 
 2. MySQL command line
 
    ```shell
-   brew install mycli
+   $ brew install mycli
    ```
 
 3. Sequel Pro
 
    ```shell
-   brew cask install sequel-pro
+   $ brew cask install sequel-pro
    ```
 
 4. MySQL Workbench
 
    ```shell
-   brew cask install mysqlworkbench
+   $ brew cask install mysqlworkbench
    ```
+
+#### Flyway
+
+```shell
+$ brew install flyway
+```
 
 ### Redis
 
 1. redis server
 
    ```shell
-   brew install redis
+   $ brew install redis
    ```
 
 
 
-## IDE
+## IDE(Jetbrain family)
 
 ### Intellij IDEA
 
-IDEA ultimate edition needs licence!
+IDEA ultimate edition needs license!
 
 1. Install
 
@@ -364,9 +402,33 @@ $ brew cask install intellij-idea
 ```
 
 2. plugins
+
+   - Lombok
+
+
+   - plantuml
+   - Color-ide (Seems not provided in plugin manager, can [download](https://plugins.jetbrains.com/plugin/download?updateId=11436) it manually)
+
 3. Solarized color
 
-Other cons of Jetbrains IDEs are similar to IDEA.
+   1. download solarized color from [intellij-colors-solarized](https://github.com/jkaving/intellij-colors-solarized) rather than the main repository of solarized color. Since the main repository *settings.jar* in intellij-colors-solarized directory does not work well on Intellij IDEA.
+   2. import it from disk, select `File > Import Settings`
+   3. Set Scheme, select `Preferences > Editor > Color Scheme > General > Solarized Dark`
+   4. Install Color-ide plugin as former description
+
+4. Configuration
+
+   - Import Gradle Project
+
+     After opening Idea, user needs to setup gradle firstly as below steps:
+
+     1. On the bottom right, select `Configure > Project Defaults > Project Structure`: 
+
+        ![idea-setup](https://i.stack.imgur.com/xijoa.png)
+
+   2. Picking the `Project` tab on the left will show that you have no SDK selected. Just click the `New...` button on the right hand side of the dropdown and point it to your JDK. After that, you can go back to the import screen and it should just show up.
+
+      ![gradle-vm-option](https://i.stack.imgur.com/g2XZf.png)
 
 ### Pycharm
 
@@ -451,6 +513,14 @@ $ brew cask install firefox
 ```shell
 $ brew cask install slack
 ```
+
+### Skype
+
+```shell
+$ brew cask install skype
+```
+
+
 
 ### Quicklook plugins
 
